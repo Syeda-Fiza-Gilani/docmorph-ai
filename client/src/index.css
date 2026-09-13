@@ -1,0 +1,138 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand palette */
+  --color-background: #FAFAFF;
+  --color-surface: #FFFFFF;
+  --color-text: #30343F;
+  --color-muted: #6B7280;
+  --color-primary: #273469;
+  --color-primary-dark: #1E2749;
+  --color-accent: #E4D9FF;
+  --color-accent-soft: #F1ECFF;
+  --color-border: #DCE1F4;
+  --color-success: #1E7A4C;
+  --color-success-soft: #E7F5EC;
+
+  /* Type */
+  --font-heading: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Motion */
+  --default-transition-duration: 200ms;
+  --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*
+  IMPORTANT: base/reset rules must live inside @layer base.
+  Tailwind v4 puts its own reset + utilities inside named layers
+  (theme, base, components, utilities). Any CSS written OUTSIDE of a
+  layer beats ALL layered CSS regardless of specificity or source
+  order — so an unlayered `* { margin: 0 }` would silently override
+  every mx-auto / px-6 / py-20 / gap-* utility in the app. Layering
+  these rules keeps them subject to the normal cascade.
+*/
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    background: var(--color-background);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  button {
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  ::selection {
+    background: var(--color-accent);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+  }
+
+  /* Visible keyboard focus for all interactive elements */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.45s cubic-bezier(0.4, 0, 0.2, 1) both;
+  }
+
+  @keyframes progress-indeterminate {
+    0% {
+      transform: translateX(-60%) scaleX(0.4);
+    }
+    50% {
+      transform: translateX(20%) scaleX(0.6);
+    }
+    100% {
+      transform: translateX(100%) scaleX(0.4);
+    }
+  }
+
+  .animate-progress {
+    animation: progress-indeterminate 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
