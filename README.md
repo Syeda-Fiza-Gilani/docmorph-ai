@@ -25,6 +25,17 @@ The project was built as a practical full-stack application with a clean SaaS-st
 
 ---
 
+
+## 📸 Screenshots
+
+<img width="1587" height="797" alt="image" src="https://github.com/user-attachments/assets/20a70bbf-c44e-4b8b-be5a-2b9cf21acde0" />
+
+<img width="1588" height="797" alt="image" src="https://github.com/user-attachments/assets/a470c6dd-7814-4536-a498-800f60c547fa" />
+
+<img width="1585" height="787" alt="image" src="https://github.com/user-attachments/assets/4f71f922-a666-45de-bac7-4018c7ddd67a" />
+
+---
+
 ## 🖥️ How It Works
 
 ```text
@@ -357,15 +368,6 @@ Rather than building only a UI prototype, the goal was to create a working pipel
 
 ---
 
-## 📸 Screenshots
-
-<img width="1587" height="797" alt="image" src="https://github.com/user-attachments/assets/20a70bbf-c44e-4b8b-be5a-2b9cf21acde0" />
-
-<img width="1588" height="797" alt="image" src="https://github.com/user-attachments/assets/a470c6dd-7814-4536-a498-800f60c547fa" />
-
-<img width="1585" height="787" alt="image" src="https://github.com/user-attachments/assets/4f71f922-a666-45de-bac7-4018c7ddd67a" />
-
----
 
 ## 🤝 Contributing
 
